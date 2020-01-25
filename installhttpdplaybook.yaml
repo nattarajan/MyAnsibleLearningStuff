@@ -1,0 +1,13 @@
+- name: This creates a group called deploy
+  hosts: G1
+  
+  vars_prompt:
+    - name: pkgName
+      prompt: "Provide package name "
+      private: no
+  tasks:
+  - name: create a group called deploy
+    yum: name={{ pkgName }}
+  - name: print the variable value
+    debug:
+      msg: package variable value is {{ pkgName }}

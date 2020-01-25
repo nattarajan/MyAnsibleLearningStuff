@@ -1,0 +1,6 @@
+- name: This creates a user called deplo-user under the deploy group
+  hosts: G1
+  tasks:
+  - name: create the user
+    user: name=deploy-user group=deploy shell=/bin/bash
+

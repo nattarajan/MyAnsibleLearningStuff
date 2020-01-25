@@ -1,0 +1,7 @@
+---
+# vars file for Natarajan
+package: httpd
+myCompany: "Microland Ltd."
+portNum: 8080
+
+ 

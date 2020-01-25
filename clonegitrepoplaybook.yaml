@@ -1,0 +1,5 @@
+- name: clone git repo. https://github.com/scmgalaxy/ansible-role-template
+  hosts: localhost
+  tasks:
+  - name: clone git repo
+    git: repo=https://github.com/scmgalaxy/ansible-role-template dest=ClonedRepos/MyRepo

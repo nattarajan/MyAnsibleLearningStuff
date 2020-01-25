@@ -1,0 +1,4 @@
+---
+# handlers file for Natarajan
+  - name: restart service
+    service: name={{ package }} state=restarted

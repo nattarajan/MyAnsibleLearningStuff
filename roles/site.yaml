@@ -1,0 +1,11 @@
+- hosts: G1,localhost
+  vars_prompt:
+    - name: myRole
+      prompt: "What role do you perform in your complany ?"
+      private: no
+  gather_facts: true
+#  remote_user: ec2-user
+#  become: yes
+  roles:
+    - role: Natarajan
+#    - role: geerlingguy.java

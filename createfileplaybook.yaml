@@ -1,0 +1,5 @@
+- name: create a file called “index.html” in /var/www/html with some dummy html contents
+  hosts: G1
+  tasks:
+  - name: create a file called “index.html” in /var/www/html with some dummy html contents
+    blockinfile: path=/var/www/html/index.html block='<h1>Welcome to my html page</h1>' create=yes

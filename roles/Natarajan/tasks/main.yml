@@ -1,0 +1,35 @@
+---
+# tasks file for Natarajan
+
+ 
+ - name: Install the httpd
+   yum: name={{ package }}
+   when: ansible_facts["os_family"] == "RedHat"
+
+ - name: Template a file to /var/www/html
+   template:
+     src: index.html.j2
+     dest: /var/www/html/index.html
+   notify:
+     - restart service
+
+ - name: create a group called deploy
+   group: name=deloitte
+
+ - name: create the user
+   user: name=deploy group=deloitte
+
+ - name: Template a file to /var/www/html
+   template:
+     src: httpd.conf.j2
+     dest: /etc/httpd/conf/httpd.conf
+   notify:
+     - restart service
+
+ - name: Install common software requirements
+   yum: name={{ item }} state=installed
+   with_items:
+     - git
+     - ntp
+     - vim
+

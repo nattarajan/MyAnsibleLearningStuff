@@ -1,0 +1,7 @@
+- name: install a package called “git”, “wget”
+  hosts: G1
+  tasks:
+  - name: install git
+    yum: name=git state=installed
+  - name: insatall wget
+    yum: name=wget state=installed
